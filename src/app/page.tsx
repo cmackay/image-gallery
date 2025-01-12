@@ -1,12 +1,13 @@
 import AlbumList from '@/components/AlbumList'
 import SearchBar from '@/components/SearchBar'
-import { Suspense, use } from 'react'
+import { Suspense } from 'react'
 
-type SearchParams = Promise<{ query: string }>
-
-export default function Home(props: { searchParams: SearchParams }) {
-  const searchParams = use(props.searchParams)
-  const query = searchParams.query || ''
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ query: string }>
+}) {
+  const { query } = await searchParams
 
   return (
     <main className="container mx-auto p-4">

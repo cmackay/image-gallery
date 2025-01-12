@@ -23,5 +23,13 @@ export async function GET(request: Request) {
     },
   })
   const json = await response.json()
-  return new Response(JSON.stringify(json), { status: 200 })
+  return new Response(
+    JSON.stringify({
+      // filter albums with no images
+      data: json.data.filter(
+        (album: { images_count: number }) => album.images_count > 0,
+      ),
+    }),
+    { status: 200 },
+  )
 }
