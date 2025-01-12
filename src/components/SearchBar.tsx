@@ -1,16 +1,16 @@
-"use client";
+'use client'
 
-import { useRouter } from "next/navigation";
-import { FormEvent, useState } from "react";
+import { useRouter } from 'next/navigation'
+import { FormEvent, useState } from 'react'
 
-export default function SearchBar({ initialQuery = "" }) {
-  const [query, setQuery] = useState(initialQuery);
-  const router = useRouter();
+export default function SearchBar({ initialQuery = '' }) {
+  const [query, setQuery] = useState(initialQuery)
+  const router = useRouter()
 
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    router.push(`/?query=${encodeURIComponent(query)}`);
-  };
+    e.preventDefault()
+    router.push(`/?query=${encodeURIComponent(query)}`)
+  }
 
   return (
     <form onSubmit={handleSubmit} className="mb-4">
@@ -19,14 +19,14 @@ export default function SearchBar({ initialQuery = "" }) {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search albums..."
-        className="w-full p-2 border rounded"
+        className="w-full rounded border p-2"
       />
       <button
         type="submit"
-        className="mt-2 px-4 py-2 bg-primary text-white rounded hover:bg-blue-600 transition-colors"
+        className="mt-2 rounded bg-primary px-4 py-2 text-white transition-colors hover:bg-blue-600"
       >
         Search
       </button>
     </form>
-  );
+  )
 }

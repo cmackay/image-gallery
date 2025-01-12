@@ -18,7 +18,7 @@ export default async function AlbumList({ query }: { query: string }) {
     <div>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {albums.map((album) => (
-          <Link href={`/album/${album.id}?query=cat`} key={album.id}>
+          <Link href={`/album/${album.id}?query=${query}`} key={album.id}>
             <AlbumCard album={album} />
           </Link>
         ))}

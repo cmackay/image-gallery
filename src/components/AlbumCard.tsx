@@ -1,13 +1,13 @@
-import { Album } from "@/lib/api";
-import Image from "next/image";
+import { Album } from '@/lib/api'
+import Image from 'next/image'
 
 export default function AlbumCard({ album }: { album: Album }) {
   return (
-    <div className="border rounded h-full w-auto object-cover p-4">
-      {album.images[0].type === "video/mp4" ? (
+    <div className="h-full w-auto rounded border object-cover p-4">
+      {album.images[0].type === 'video/mp4' ? (
         <video
           src={album.images[0].link}
-          className="w-full h-64 object-cover mb-2"
+          className="mb-2 h-64 w-full object-cover"
           muted
           loop
           autoPlay
@@ -19,12 +19,12 @@ export default function AlbumCard({ album }: { album: Album }) {
           alt={album.title}
           width={300}
           height={300}
-          className="w-full h-64 object-cover mb-2"
+          className="mb-2 h-64 w-full object-cover"
         />
       )}
       <h2 className="text-xl font-semibold">{album.title}</h2>
       <p className="text-sm text-gray-600">{album.account_url}</p>
       <p className="text-sm text-gray-600">{album.views} views</p>
     </div>
-  );
+  )
 }

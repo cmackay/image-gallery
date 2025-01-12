@@ -1,3 +1,5 @@
+This app provides a basic Imgur album search and gallery built using **Next.js 15**.
+
 ## Getting Started
 
 Install dependencies
