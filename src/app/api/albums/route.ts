@@ -12,7 +12,7 @@ export async function GET(request: Request) {
     )
   }
 
-  const imgurUrl = `https://api.imgur.com/3/gallery/search?q_all=${encodeURIComponent(
+  const imgurUrl = `https://api.imgur.com/3/gallery/search/top?q_all=${encodeURIComponent(
     query,
   )}&q_type=album`
 
