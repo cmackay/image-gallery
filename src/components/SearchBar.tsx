@@ -3,7 +3,11 @@
 import { useRouter } from 'next/navigation'
 import { FormEvent, startTransition, useState } from 'react'
 
-export default function SearchBar({ initialQuery = '' }) {
+export default function SearchBar({
+  initialQuery = '',
+}: {
+  initialQuery: string
+}) {
   const [query, setQuery] = useState(initialQuery)
   const [loading, setLoading] = useState(false)
   const router = useRouter()
