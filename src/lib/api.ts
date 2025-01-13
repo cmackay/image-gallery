@@ -1,19 +1,18 @@
 export type Album = {
   link: string
-  account_url: number
   views: number
+  account_url: string
   images: AlbumImage[]
-  userId: number
-  id: number
+  id: string
   title: string
   cover: string
 }
 
 export type AlbumImage = {
   type: string
-  gifv: string
+  gifv?: string
   link: string
-  title: string
+  title?: string
   id: string
 }
 
